@@ -1,9 +1,26 @@
 package net.swatiisingh.JournalApplication.entry;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
+
+@Document
+
 public class Journel_entry {
     private String title;
     private String content;
-    private long id;
+    @Id
+    private String id;
+    private Date date;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public String getTitle() {
         return title;
@@ -21,11 +38,11 @@ public class Journel_entry {
         this.content = content;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 }
