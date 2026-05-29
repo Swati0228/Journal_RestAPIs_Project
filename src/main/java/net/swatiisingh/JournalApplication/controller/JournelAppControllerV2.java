@@ -1,0 +1,47 @@
+package net.swatiisingh.JournalApplication.controller;
+
+import net.swatiisingh.JournalApplication.entry.Journel_entry;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class JournelAppControllerV2 {
+    private HashMap<Long, Journel_entry> map = new HashMap<>();
+
+    // GET ALL
+    @GetMapping
+    public List<Journel_entry> getAll() {
+        return new ArrayList<>(map.values());
+    }
+
+    // CREATE
+    @PostMapping
+    public boolean createEntry(@RequestBody Journel_entry myentry) {
+
+        return true;
+    }
+
+    // GET BY ID
+    @GetMapping("/id/{myId}")
+    public Journel_entry getJourneybyId(@PathVariable Long myId) {
+        return null;
+    }
+
+    // DELETE
+    @DeleteMapping("/id/{myId}")
+    public Journel_entry deleteById(@PathVariable Long myId) {
+        return null;
+    }
+
+    // UPDATE
+    @PutMapping("/id/{myId}")
+    public Journel_entry updateEntry(
+            @PathVariable Long myId,
+            @RequestBody Journel_entry newEntry) {
+
+        return null;
+    }
+}
+
